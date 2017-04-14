@@ -2,6 +2,19 @@
 
 int main(int argv,char **args)
 {
-    printf("hello\n");
+    printf("\t\tTEST\n");
+    
+    ArbreA *a = new_ArbreA();
+    a = ArbreA_addV(a,10);
+    a = ArbreA_addO(a,'*'); 
+    a = ArbreA_addV(a,10);
+    a = ArbreA_addO(a,'+');
+    a = ArbreA_addV(a,15);
+    a = ArbreA_addO(a,'+');
+    a = ArbreA_addV(a,5);
+   
+
+    ArbreA_toString(a);
+    printf(" \n val :%f\n",ArbreA_evaluer(a));
     return 0;
 }
