@@ -103,7 +103,7 @@ ArbreA *ArbreA_addV(ArbreA *a,float v)
     //si le noeud est vide
     if( a == NULL) return init_ArbreAV(v);
     //sinon on place la valeur dans le fils droite
-    else    a->fd = init_ArbreAV(v);
+    else    a->fd = ArbreA_addV(a->fd,v);
     //on routourn le noeud
     return a;
 }
@@ -172,12 +172,11 @@ ArbreA  *ArbreA_addO(ArbreA *a,char op)
     if(p_init >= p_nv)
     {
         a_nv->fg = a;
-        a = a_nv;
+        return a_nv;
     }
     else
     {
-        a_nv->fg = a->fd;
-        a->fd = a_nv;
+        a->fd = ArbreA_addO(a->fd,op);
     }
 //on retourn a la fin
 return a;
