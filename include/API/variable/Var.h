@@ -1,0 +1,1 @@
+/*  Ce fichier traite tout les fonctionnalitées des variable */
