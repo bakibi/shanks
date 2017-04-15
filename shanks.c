@@ -12,5 +12,6 @@ int main(int argv,char **args)
     printf("\n %d",Var_exists("e"));
     Var_update("r1",14,2);
     Var_update("x1",-32000,1);
+    Var_remove("vdfgd");
     return 0;
 }

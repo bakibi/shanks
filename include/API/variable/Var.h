@@ -13,7 +13,7 @@ typedef struct Var
 Var *new_Var(const char *name,int type);
 int Var_exists(const char *name);
 int Var_update(const char *name,float value,int type);
-
+int Var_remove(const char *name1);
 
 
 //      Les implementation des fonctions
@@ -41,7 +41,7 @@ Var *new_Var(const char *name,int type)
     strcpy(v->name,name);
     // enregistrement dans le fichier
     FILE *fichier = NULL;
-    fichier = fopen("values.txt","a+");
+    fichier = fopen("values.tmp","a+");
     if(!fichier) return NULL;
 
     fprintf(fichier,"%s %d %f\n",v->name,v->type,v->value);
@@ -67,7 +67,7 @@ int Var_exists(const char *name1)
     float value = 0;
     int type = 0;
     char name[30];
-    fichier = fopen("values.txt","r");
+    fichier = fopen("values.tmp","r");
     if(fichier == NULL) return 0;
     rewind(fichier);
     // on parcours le fichier jusqua ce qu on trouve la var
@@ -106,7 +106,7 @@ int Var_update(const char *name1,float value1,int type1)
    
     if(Var_exists(name1))
     {
-         FILE *f1 = fopen("values.txt","r");
+         FILE *f1 = fopen("values.tmp","r");
          FILE *wpp = fopen("wpp","w+");
         float value = 0;
          int type = 0;
@@ -125,7 +125,7 @@ int Var_update(const char *name1,float value1,int type1)
         fclose(wpp);
 
         // maintenant on fait la mise à jour au variable
-         f1 = fopen("values.txt","w+");
+         f1 = fopen("values.tmp","w+");
          wpp = fopen("wpp","r");
          while(!feof(wpp))
          {
@@ -135,9 +135,68 @@ int Var_update(const char *name1,float value1,int type1)
         fclose(f1);
         fclose(wpp);
         remove("wpp");
+        return 1;
     }
     return 0;
-}
+}//eof
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Cette fonction permet de supprimer une variable
+int Var_remove(const char *name1)
+{
+    if(Var_exists(name1))
+    {
+        FILE *f1 = fopen("values.tmp","r");   
+        FILE *wpp = fopen("wpp","w+");
+        float value = 0;
+         int type = 0;
+        char name[30];
+        // copier dans un fichier tompore
+        while(!feof(f1))
+        {
+            fscanf(f1,"%s %d %f\n",name,&type,&value);
+            if(strcmp(name,name1) != 0)
+                fprintf(wpp,"%s %d %f\n",name,type,value);
+        }
+        fclose(f1);
+        fclose(wpp);
+        // rendre les var dans le fichier values.tmp
+        f1 = fopen("values.tmp","w+");
+        wpp = fopen("wpp","r");
+        while(!feof(wpp))
+        {
+            fscanf(wpp,"%s %d %f\n",name,&type,&value);
+            fprintf(f1,"%s %d %f\n",name,type,value);
+        }
+        fclose(f1);
+        fclose(wpp);
+        remove("wpp");
+        return 1;
+    }
+    return 0;
+}//eof
