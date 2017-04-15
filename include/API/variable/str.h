@@ -75,7 +75,7 @@ int Str_exists(const char *name1)
     }
     fclose(f);
     return 0;
-}
+}//eof
 
 
 
