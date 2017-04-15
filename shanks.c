@@ -3,20 +3,10 @@
 int main(int argv,char **args)
 {
     printf("\t\tTEST\n");
+    Var *v1 = new_Var("v",1);
+    Var *v2 = new_Var("x",1);
+    Var *v13 = new_Var("r",1);
+    Var *v134 = new_Var("e",1);
     
-    ArbreA *a = new_ArbreA();
-    a = ArbreA_addO(a,'-'); 
-    a = ArbreA_addV(a,10);
-    a = ArbreA_addO(a,'*'); 
-    a = ArbreA_addV(a,1);
-    a = ArbreA_addO(a,'+');
-    a = ArbreA_addV(a,10);
-    a = ArbreA_addO(a,'*');
-    a = ArbreA_addV(a,5);
-
-   
-
-    ArbreA_toString(a);
-    printf(" \n val :%f\n",ArbreA_evaluer(a));
     return 0;
 }
