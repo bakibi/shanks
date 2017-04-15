@@ -3,10 +3,8 @@
 int main(int argv,char **args)
 {
     printf("\t\tTEST\n");
-    
-    Str *s = new_Str("str13");
-    Str_exists("drg");
-    Str_update("str2","salut$tout$le$monde");
-    Str_remove("str2");
+     char s[30];
+     strcpy(s,"salut tout le \n \n \t \t   sdkfun s  monde");
+   printf("%s",Str_formate(s));
     return 0;
 }

@@ -14,8 +14,8 @@ Str *new_Str(const char *name);
 int Str_exists(const char *name);
 int Str_update(const char *name,const char *value);
 int Str_remove(const char *name);
-char *Str_spaceTosc(char *str);
-char *Str_scToSpace(char *str);
+char *Str_formate(char *str);
+char *Str_deformate(char *str);
 
 
 
@@ -198,4 +198,79 @@ int Str_remove(const char *name1)
         return 1;
     }
     return 0;
+}//eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Cette fonction permet de formater la chaine de caractere 
+char *Str_formate(char *str)
+{
+    int taille = strlen(str);
+    for(int i=0;i<taille;i++) 
+    {  
+        
+        if(str[i] == ' ')    *(str + i)  = '$';
+        if(str[i] == '\n')  *(str + i) = '#';
+        if(str[i] == '\t')  *(str + i) = '&';
+    }
+    
+    return str;
+}//eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  Cette fonction permet de deformater la chaine de caractere 
+char *Str_deformate(char *str)
+{
+    int taille = strlen(str);
+    for(int i=0;i<taille;i++) 
+    {  
+        
+        if(str[i] == '$')    *(str + i)  = ' ';
+        if(str[i] == '#')  *(str + i) = '\n';
+        if(str[i] == '&')  *(str + i) = '\t';
+    }
+    
+    return str;
 }//eof
