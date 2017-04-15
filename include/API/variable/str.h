@@ -32,13 +32,16 @@ int Str_remove(const char *name);
 //  creation d une nouvelle instance de Str
 Str *new_Str(const char *name)
 {
-    Str *s = (Str *)malloc(sozeof(Str));
+    Str *s = (Str *)malloc(sizeof(Str));
     if(!s) return NULL;
     s->name = (char *)malloc(strlen(name));
-    s->value = (char *)malloc(sierof(char)*2);
+    s->value = (char *)malloc(sizeof(char)*2);
     strcpy(s->name,name);
     strcpy(s->value,"");
 
+    FILE *f = fopen("strvalues.tmp","a+");
+    fprintf(f,"%s _%s_\n",s->name,s->value);
+    fclose(f);
 
     return (Str *)s;
 }//eof
