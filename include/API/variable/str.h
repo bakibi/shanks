@@ -14,9 +14,20 @@ Str *new_Str(const char *name);
 int Str_exists(const char *name);
 int Str_update(const char *name,const char *value);
 int Str_remove(const char *name);
+char *Str_spaceTosc(char *str);
+char *Str_scToSpace(char *str);
+
+
+
+
+
 
 
 //  les implementation des fonction
+
+
+
+
 
 
 
@@ -60,6 +71,13 @@ Str *new_Str(const char *name)
 
 
 
+
+
+
+
+
+
+
 //Cette fonction verifie si un Str existe dans le fichier strvalues.tmp
 int Str_exists(const char *name1)
 {
@@ -80,3 +98,104 @@ int Str_exists(const char *name1)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+//  changer la valeur d'un str 
+int Str_update(const char *name1,const char *value1)
+{
+    if(Str_exists(name1))
+    {
+        char name[30];
+        char value[1000];
+        FILE *f = fopen("strvalues.tmp","r");
+        FILE *wppstr =  fopen("wppstr","w+");
+        //copier les donnees dans une wordpaper
+        while(!feof(f))
+        {
+            fscanf(f,"%s %s\n",name,value);
+            if(strcmp(name1,name) == 0)
+                fprintf(wppstr,"%s %s\n",name,value1);
+            else
+                fprintf(wppstr,"%s %s\n",name,value);
+        }//eow
+        fclose(f);
+        fclose(wppstr);
+        f = fopen("strvalues.tmp","w+");
+        wppstr =  fopen("wppstr","r");
+        while(!feof(wppstr))
+        {
+            fscanf(wppstr,"%s %s\n",name,value);
+            fprintf(f,"%s %s\n",name,value);
+       
+        }//eow
+         fclose(f);
+        fclose(wppstr);
+        remove("wppstr");
+        return 1;
+    }
+    return 0;
+}//eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+int Str_remove(const char *name1)
+{
+    if(Str_exists(name1))
+    {
+        char name[30];
+        char value[1000];
+        FILE *f = fopen("strvalues.tmp","r");
+        FILE *wppstr =  fopen("wppstr","w+");
+        //copier les donnees dans une wordpaper
+        while(!feof(f))
+        {
+            fscanf(f,"%s %s\n",name,value);
+            if(strcmp(name1,name) != 0)
+                fprintf(wppstr,"%s %s\n",name,value);
+        }//eow
+        fclose(f);
+        fclose(wppstr);
+        f = fopen("strvalues.tmp","w+");
+        wppstr =  fopen("wppstr","r");
+        while(!feof(wppstr))
+        {
+            fscanf(wppstr,"%s %s\n",name,value);
+            fprintf(f,"%s %s\n",name,value);
+       
+        }//eow
+         fclose(f);
+        fclose(wppstr);
+        remove("wppstr");
+        return 1;
+    }
+    return 0;
+}//eof
