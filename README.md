@@ -6,7 +6,7 @@
     vous pouver avec programmer plus rapidement et creer des UI ...
 
     L'extension des fichiers doit être ".sks"
-## Fonctionnalité
+## Fonctionnalités
 
 - calculer une expression arithmétique simple .
 - calculer une expression arithmétique complex .
