@@ -114,6 +114,7 @@ Condition *new_And(Condition *cn1,Condition *cn2)
 //      Cette fonction cree une condition de type OR
 Condition *new_Or(Condition *cn1,Condition *cn2)
 {
+    
     Condition *c = (Condition *)malloc(sizeof(Condition));
     if(!c) return NULL;
     c->type = 3;
