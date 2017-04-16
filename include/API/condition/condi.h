@@ -87,7 +87,7 @@ Condition *new_Not(Condition *cn)
 
 
 //      Cette fonction cree une condition de type AND
-Condition *new_And(Condition *c1,Condition *cn2);
+Condition *new_And(Condition *cn1,Condition *cn2)
 {
     Condition *c = (Condition *)malloc(sizeof(Condition));
     if(!c) return NULL;
@@ -112,7 +112,7 @@ Condition *new_And(Condition *c1,Condition *cn2);
 
 
 //      Cette fonction cree une condition de type OR
-Condition *new_Or(Condition *c1,Condition *cn2);
+Condition *new_Or(Condition *cn1,Condition *cn2)
 {
     Condition *c = (Condition *)malloc(sizeof(Condition));
     if(!c) return NULL;
