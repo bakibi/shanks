@@ -13,4 +13,5 @@
 - declaration des variables de type int or float avec l'acronyme "var".
 - declaration des variables de type "chaine de caractère" avec l'acronyme "str" .
 - possibilté de changer la valeur d'une variable ou la supprimer difinitivement .
+- Les operations Logique sont traitées .
 
