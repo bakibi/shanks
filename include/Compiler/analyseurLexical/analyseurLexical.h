@@ -33,5 +33,13 @@ Lexemes *Analyseur_Lexcial(const char *phrase)
                 esp_debut = 0;
             }
     }//e of for
+
+    if(esp_debut == 0)  
+        {
+            mot[j] = '\0';  
+             Lexeme *nn = new_Lexeme(mot);
+                liste = Lexemes_add(liste,nn);
+
+        }
     return liste;
 }

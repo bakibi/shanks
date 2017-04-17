@@ -61,31 +61,47 @@ Lexeme *new_Lexeme(char const *l)
     lem->value =(char *) malloc(taille+1);
     strcpy(lem->value,l);
 
-    if(taille == 1)
+     if(Lexeme_estKey(l))
+            {
+                lem->type = 3;
+            return lem;
+            }
+    else if(Lexeme_estNum(l))
+            {lem->type = 0;
+            return lem;
+            }
+   else  if(taille == 1)
     {
     
-        if( (strcmp(l,"+") == 0) || (strcmp(l,"-") == 0) || (strcmp(l,"*") == 0) || (strcmp(l,"/") == 0) || (strcmp(l,"%") == 0)   )
-            lem->type = 1;
-        if(strcmp(l,"(") == 0 )//
+        if( (strcmp(l,"+") == 0)   )
+            {
+             //printf("gdgdfd");
+                lem->type = 1;
+            }
+       else if(strcmp(l,"(") == 0 )//
             lem->type = 4;            
-        if(strcmp(l,")") == 0 )//
+        else if(strcmp(l,")") == 0 )//
             lem->type = 5;
-        if(strcmp(l,"[") == 0 )//
+        else if(strcmp(l,"[") == 0 )//
             lem->type = 6;
-        if(strcmp(l,"]") == 0 )//
+        else if(strcmp(l,"]") == 0 )//
             lem->type = 7;       
-        if(strcmp(l,"<") == 0 )
+        else if(strcmp(l,"<") == 0 )
             lem->type = 10; 
-        if(strcmp(l,">") == 0 )
+        else if(strcmp(l,">") == 0 )
             lem->type = 12;   
-        if(strcmp(l,"!") == 0 )
+        else if(strcmp(l,"!") == 0 )
             lem->type = 14;
-        if(strcmp(l,"=") == 0 )
+        else if(strcmp(l,"=") == 0 )
             lem->type = 15;     
-        if(strcmp(l,"@") == 0 )
+        else if(strcmp(l,"@") == 0 )
             lem->type = 18;
-        if(strcmp(l,"\"") == 0 )
+        else if(strcmp(l,"\"") == 0 )
             lem->type = 19;        
+        else 
+            lem->type = -1;
+         return lem;   
+            
     }//si la taille de la lexeme == 1
     if(taille == 2)
     {
@@ -101,14 +117,13 @@ Lexeme *new_Lexeme(char const *l)
             lem->type = 16;
         else if(strcmp(l,"||") == 0 )
             lem->type = 17;
+        else 
+            lem->type = -1;
+       return lem; 
+            
     }//si la taille de la lexem == 2
     else
-    {
-        if(Lexeme_estKey(l))
-            lem->type = 3;
-        else if(Lexeme_estNum(l))
-            lem->type = 0;
-        else 
+    { 
             lem->type = -1;            
         
     }//si la taille est superieur à 2
@@ -159,10 +174,10 @@ const char  *Lexeme_toString(Lexeme *l)
     char *res = NULL;
     char tt[2];
      if(l == NULL) return NULL;
-     res = (char *)malloc(l->taille + 4);
+     res = (char *)malloc(l->taille + 7);
      sprintf(tt, "%d", l->type);
      strcpy(res,l->value);
-     strcat(res," ");
+     strcat(res,"\t\t");
      strcat(res,tt);
      
 
