@@ -58,7 +58,7 @@ Lexeme *new_Lexeme(char const *l)
     
     int taille = strlen(l);
     lem->taille = taille;
-    lem->value =(char *) malloc(taille);
+    lem->value =(char *) malloc(taille+1);
     strcpy(lem->value,l);
 
     if(taille == 1)
@@ -125,7 +125,7 @@ Lexeme *new_Lexeme(char const *l)
 //      Cette foction verifie si un str est un mots
 int Lexeme_estKey(char const *t)
 {
-    const char *mots[8] = 
+    const char mots[8][10] = 
                                     {
                                       "var",
                                       "str",

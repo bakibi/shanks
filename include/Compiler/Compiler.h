@@ -1,3 +1,3 @@
 /*Ce fichier contier tout les fonctionalités de compilation */
 
-#include "lexeme.h"
+#include "analyseurLexical/analyseurLexical.h"
