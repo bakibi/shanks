@@ -38,6 +38,11 @@ Lexeme *new_Lexeme(char const *l);
 int Lexeme_estKey(char const *t);
 int Lexeme_estNum(char const *t);
 const char  *Lexeme_toString(Lexeme *l);
+int estUnDelimiteur(char c);
+const char *retourDelimiteur(char c);
+
+
+
 
 //      Les implementations des fonctions 
 
@@ -182,4 +187,37 @@ const char  *Lexeme_toString(Lexeme *l)
      
 
      return res;
+}//eof
+
+
+
+
+
+
+int estUnDelimiteur(char c)
+{
+    int taille = 16;
+    char tab[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';'  };
+    
+    for(int i=0;i<16;i++)
+        if(c == tab[i])
+            return 1;
+    return 0;
+}//eof
+
+
+
+
+
+const char *retourDelimiteur(char c)
+{
+    int taille = 16;
+    char *tab[] = {"\n", " " , "\t" , "(" , ")" , "[" , "]" , "{" , "}" , "=" , "<" , ">" , "\"" , "," , "@" , ";"  };
+    char tab1[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';'  };
+    int v = 0;
+     for(int i=0;i<16;i++)
+        if(c == tab1[i])
+            v = i;
+    return &tab[v][0];
+
 }//eof
