@@ -26,6 +26,7 @@ Lexemes *Analyseur_Lexcial(const char *phrase)
                 esp_debut = 1;
                 j = 0;
             }
+            
             else 
             {
               mot[j] = phrase[i];
@@ -43,3 +44,22 @@ Lexemes *Analyseur_Lexcial(const char *phrase)
         }
     return liste;
 }
+
+
+
+// cette fonction et plus devlopper par rapport   à la premiere fonction 
+Lexemes *Analyseur_LexcialV1(const char *phrase)
+{
+    Lexemes *liste = NULL;
+    int taille  = strlen(phrase);
+    char mot[2000];
+    int j = 0;
+    int est_valide = 0;
+
+    // partie analyse 
+    for(int i=0;i<taille;i++)
+    {
+           
+    }
+    return liste ;
+}//eof
