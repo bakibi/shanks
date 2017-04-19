@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  18 APR 2017 23:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.3.11)  19 APR 2017 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -765,19 +765,19 @@ LaTeX Info: Redefining \nameref on input line 52.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-(./title.tex <./LogoFSTM.jpg, id=244, 226.8475pt x 223.83624pt>
+(./title.tex <./LogoFSTM.jpg, id=135, 226.8475pt x 223.83624pt>
 File: ./LogoFSTM.jpg Graphic file (type jpg)
 
 <use ./LogoFSTM.jpg>
 Package pdftex.def Info: ./LogoFSTM.jpg used on input line 5.
 (pdftex.def)             Requested size: 169.29684pt x 167.05022pt.
- <./univlogo.png, id=245, 180.675pt x 174.6525pt>
+ <./univlogo.png, id=136, 180.675pt x 174.6525pt>
 File: ./univlogo.png Graphic file (type png)
 
 <use ./univlogo.png>
 Package pdftex.def Info: ./univlogo.png used on input line 6.
 (pdftex.def)             Requested size: 169.29684pt x 163.65369pt.
- <./logo.jpg, id=246, 846.16125pt x 435.6275pt>
+ <./logo.jpg, id=137, 846.16125pt x 435.6275pt>
 File: ./logo.jpg Graphic file (type jpg)
 
 <use ./logo.jpg>
@@ -796,19 +796,14 @@ me identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.15 \end{abstract}
-                    [1]) (./main.tocpdfTeX warning (ext4): destination with the
- same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.48 ...sline {chapter}{Annexe 1}{16}{chapter*.26}
-                                                   [1
-
-])
+                    [1]) (./main.toc)
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
- [0]pdfTeX warning (ext4): destination with the same identifier (name{page.0}) 
-has been already used, duplicate ignored
+ [0
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.0}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.85 \newpage
@@ -819,250 +814,87 @@ File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
 )
 (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)) (./existant.texpdfTeX warning (ext4): destination with the same identifier (
-name{page.1}) has been already used, duplicate ignored
+)
+Underfull \hbox (badness 10000) in paragraph at lines 7--23
+
+ []
+
+<IDE_1.png, id=200, 1371.1225pt x 770.88pt>
+File: IDE_1.png Graphic file (type png)
+ <use IDE_1.png>
+Package pdftex.def Info: IDE_1.png used on input line 26.
+(pdftex.def)             Requested size: 362.77264pt x 203.95287pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.1 \chapter
-            {Analyse de l'existant} [1
+l.39 
+      [1
 
-] [2]
+] [2 <./IDE_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 85--93
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 107--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--136
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 160--162
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 222--233
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 234--241
+
+ []
+
+) (./existant.tex [7]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
+Underfull \hbox (badness 10000) in paragraph at lines 12--14
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 27--28
-
- []
-
-
-LaTeX Warning: Citation `cite0' on page 3 undefined on input line 36.
-
-
-LaTeX Warning: Citation `cite1' on page 3 undefined on input line 37.
-
-
-LaTeX Warning: Citation `cite2' on page 3 undefined on input line 38.
-
-
-LaTeX Warning: Citation `cite3' on page 3 undefined on input line 39.
-
-
-LaTeX Warning: Citation `cite4' on page 3 undefined on input line 40.
-
-) (./besoins.tex [3
-
-]
-Chapter 3.
-[4
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 25--26
-
- []
-
-<besoins/rendu.png, id=358, 375.65344pt x 456.95718pt>
-File: besoins/rendu.png Graphic file (type png)
- <use besoins/rendu.png>
-Package pdftex.def Info: besoins/rendu.png used on input line 31.
-(pdftex.def)             Requested size: 233.91154pt x 284.52756pt.
-
-[5 <./besoins/rendu.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-
- []
-
-) (./autre_partie.tex [6]
-Chapter 4.
-<autre_partie/image1.jpg, id=370, 475.02469pt x 399.74344pt>
-File: autre_partie/image1.jpg Graphic file (type jpg)
-
-<use autre_partie/image1.jpg>
-Package pdftex.def Info: autre_partie/image1.jpg used on input line 13.
-(pdftex.def)             Requested size: 405.75166pt x 341.43306pt.
-
-
-LaTeX Warning: Citation `cite4' on page 7 undefined on input line 21.
-
-[7
-
- <./autre_partie/image1.jpg>]
-<autre_partie/image2.jpg, id=385, 475.02469pt x 399.74344pt>
-File: autre_partie/image2.jpg Graphic file (type jpg)
-
-<use autre_partie/image2.jpg>
-Package pdftex.def Info: autre_partie/image2.jpg used on input line 29.
-(pdftex.def)             Requested size: 405.75166pt x 341.43306pt.
-
-
-LaTeX Warning: Citation `cite6' on page 8 undefined on input line 38.
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 41.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
- [8 <./autre_partie/image2.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 58--60
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
 
- []
-
-<autre_partie/image3.jpg, id=394, 475.02469pt x 399.74344pt>
-File: autre_partie/image3.jpg Graphic file (type jpg)
-
-<use autre_partie/image3.jpg>
-Package pdftex.def Info: autre_partie/image3.jpg used on input line 63.
-(pdftex.def)             Requested size: 202.86496pt x 170.71652pt.
-
-
-LaTeX Warning: Citation `cite0' on page 9 undefined on input line 70.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--75
+Underfull \hbox (badness 10000) in paragraph at lines 29--31
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 82--84
+Underfull \hbox (badness 10000) in paragraph at lines 32--36
 
  []
 
-<autre_partie/image4.jpg, id=397, 475.02469pt x 399.74344pt>
-File: autre_partie/image4.jpg Graphic file (type jpg)
+[8
 
-<use autre_partie/image4.jpg>
-Package pdftex.def Info: autre_partie/image4.jpg used on input line 89.
-(pdftex.def)             Requested size: 338.12517pt x 284.52756pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
-
- []
-
-[9 <./autre_partie/image3.jpg> <./autre_partie/image4.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 98--99
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--105
-
- []
-
-) (./resultats.tex [10]
-Chapter 5.
-[11
-
-] <resultats/gallerie.jpg, id=426, 184.43906pt x 296.60812pt>
-File: resultats/gallerie.jpg Graphic file (type jpg)
-
-<use resultats/gallerie.jpg>
-Package pdftex.def Info: resultats/gallerie.jpg used on input line 44.
-(pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-File: resultats/gallerie.jpg Graphic file (type jpg)
- <use resultats/gallerie.jpg>
-Package pdftex.def Info: resultats/gallerie.jpg used on input line 46.
-(pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-File: resultats/gallerie.jpg Graphic file (type jpg)
-
-<use resultats/gallerie.jpg>
-Package pdftex.def Info: resultats/gallerie.jpg used on input line 48.
-(pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-File: resultats/gallerie.jpg Graphic file (type jpg)
- <use resultats/gallerie.jpg>
-Package pdftex.def Info: resultats/gallerie.jpg used on input line 50.
-(pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-File: resultats/gallerie.jpg Graphic file (type jpg)
-
-<use resultats/gallerie.jpg>
-Package pdftex.def Info: resultats/gallerie.jpg used on input line 52.
-(pdftex.def)             Requested size: 147.55144pt x 237.2868pt.
-) (./bilan.tex [12 <./resultats/gallerie.jpg>]
-Chapter 6.
-
-Underfull \hbox (badness 10000) in paragraph at lines 15--16
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 22--23
-
- []
-
-[13
+]) (./bilan.tex [9]
+Chapter 3.
+) [10
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 33--34
-
- []
-
-) (./annexes.tex [14] [15
-
-] (./annexe1.tex) (./annexe2.tex [16
-
-]pdfTeX warning (ext4): destination with the same identifier (name{section.6.1}
-) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.23 \section{Partie 1}
-                       pdfTeX warning (ext4): destination with the same identif
-ier (name{subsection.6.1.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.27 \subsection{Sous-parie 1}
-                              pdfTeX warning (ext4): destination with the same 
-identifier (name{subsection.6.1.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.31 \subsection{Sous-parie 2}
-                              pdfTeX warning (ext4): destination with the same 
-identifier (name{section.6.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.35 \section{Partie 2}
-                        [17
-
-]
-<presentation/schema.png, id=462, 799.06076pt x 431.6125pt>
-File: presentation/schema.png Graphic file (type png)
-
-<use presentation/schema.png>
-Package pdftex.def Info: presentation/schema.png used on input line 53.
-(pdftex.def)             Requested size: 421.40306pt x 227.62204pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 59--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 65--67
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--73
-
- []
-
-)) [18 <./presentation/schema.png>]
 No file main.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
@@ -1070,50 +902,32 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 20B961A214C2F42A8BEBC3102FC65AE6;3888.
-
-
-LaTeX Warning: There were undefined references.
-
+(rerunfilecheck)             Checksum: B8A16711F5CC4A459A588AD11298CD8F;2318.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 112.
  ) 
 Here is how much of TeX's memory you used:
- 19972 strings out of 494910
- 358313 string characters out of 6179836
- 427118 words of memory out of 5000000
- 22758 multiletter control sequences out of 15000+600000
- 21913 words of font info for 45 fonts, out of 8000000 for 9000
+ 19801 strings out of 494910
+ 355687 string characters out of 6179836
+ 422564 words of memory out of 5000000
+ 22679 multiletter control sequences out of 15000+600000
+ 15880 words of font info for 32 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 62i,10n,96p,655b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
-st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
- </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/elk/.
-texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1000.600pk> </home/elk/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx0800.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/
-jknappen/ec/ecti0800.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/e
-crm0800.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk
-> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/elk/
-.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/elk/.texmf-var/fo
-nts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/elk/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/ecbx2488.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/
-ecrm1000.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600p
-k> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </home/elk
-/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/elk/.texmf-var/f
-onts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/elk/.texmf-var/fonts/pk/ljfou
-r/jknappen/ec/ecbx2074.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec
-/eccc1440.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.600
-pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on main.pdf (24 pages, 333400 bytes).
+ 62i,6n,96p,758b,517s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/elk
+/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/elk/.texmf-var/f
+onts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/elk/.texmf-var/fonts/pk/ljfou
+r/jknappen/ec/ecbx2488.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec
+/ecrm1000.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600
+pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1200.600pk> </home/el
+k/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/elk/.texmf-var/
+fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/elk/.texmf-var/fonts/pk/ljfo
+ur/jknappen/ec/ecbx2074.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/e
+c/eccc1440.600pk> </home/elk/.texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1728.60
+0pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on main.pdf (15 pages, 284166 bytes).
 PDF statistics:
- 976 PDF objects out of 1000 (max. 8388607)
- 515 compressed objects within 6 object streams
- 112 named destinations out of 1000 (max. 500000)
- 543 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 684 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 289 words of extra memory for PDF output out of 10000 (max. 10000000)
 

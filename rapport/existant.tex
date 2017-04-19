@@ -1,45 +1,62 @@
-\chapter{Analyse de l'existant}
+\chapter{L'analyse de l'interpréteur}
 
-Intro
 
-\section{Partie 1}
 
-Intro
+En informatique, un interprète, ou interpréteur , est un outil ayant pour tâche d'analyser, de traduire et d'exécuter les programmes écrits dans un langage informatique. On qualifie parfois, et abusivement, les langages dont les programmes sont généralement exécutés par un interpréteur de langages interprétés.
+\\[0.5cm]
+Un interpréteur se distingue d’un compilateur par le fait que, pour exécuter un programme, les opérations d’analyse et de traductions sont réalisées à chaque exécution du programme (par un interpréteur) plutôt qu’une fois pour toutes (par un compilateur).
 
-\subsection{Sous-partie 1}
 
-Bla
+\section{Introduction au principe}
 
-\subsection{Sous-partie 2}
+L'interprétation repose sur l'exécution dynamique du programme par un autre programme (l'interprète), plutôt que sur sa conversion en un autre langage (par exemple le langage machine) ; elle évite la séparation du temps de conversion et du temps d'exécution, qui sont simultanés.
+\\[0.5cm]
 
-Bla\\
+On différencie un programme dit script, d'un programme dit compilé :
 
-Transition
+\begin{itemize}
+\item Un programme script est exécuté à partir du fichier source via un interpréteur de script ;
+\item Un programme compilé est exécuté à partir d'un bloc en langage machine issu de la traduction du fichier source.
+\end{itemize}
 
-\section{Partie 2}
+Le cycle d'un interprète est le suivant :
+\begin{itemize}
+\item lire et analyser une instruction (ou expression) ;
+\item si l'instruction est syntaxiquement correcte, l'exécuter (ou évaluer l'expression) ;
+\item passer à l'instruction suivante.
+\end{itemize}
 
-Bla\\
+Ainsi, contrairement au compilateur, l'interprète exécute les instructions du programme (ou en évalue les expressions), au fur et à mesure de leur lecture pour interprétation. Du fait de cette phase sans traduction préalable, l'exécution d'un programme interprété est généralement plus lente que le même programme compilé. La plupart des interprètes n'exécutent plus la chaîne de caractères représentant le programme, mais une forme interne, telle qu'un arbre syntaxique.
+\\[0.5cm]
 
-Transition
+En pratique, il existe une continuité entre interprètes et compilateurs. La plupart des interprètes utilisent des représentations internes intermédiaires (arbres syntaxiques abstraits, ou même code octet) et des traitements (analyses lexicale et syntaxique) ressemblant à ceux des compilateurs. Enfin, certaines implémentations de certains langages (par exemple SBCL pour Common Lisp) sont interactifs comme un interprète, mais traduisent dès que possible le texte d'un bout de programme en du code machine directement exécutable par le processeur. Le caractère interprétatif ou compilatoire est donc propre à l'implémentation d'un langage de programmation, et pas au langage lui-même.
+\\[0.5cm]
+L'intérêt des langages interprétés réside principalement dans la facilité de programmation et dans la portabilité. Les langages interprétés facilitent énormément la mise au point des programmes car ils évitent la phase de compilation, souvent longue, et limitent les possibilités de bogues. Il est en général possible d'exécuter des programmes incomplets, ce qui facilite le développement rapide d'applications ou de prototypes d'applications. Ainsi, le langage BASIC fut le premier langage interprété à permettre au grand public d'accéder à la programmation, tandis que le premier langage de programmation moderne interprété est Lisp.
+\\[0.5cm]
 
-\section{Bilan récapitulatif}
+La portabilité permet d'écrire un programme unique, pouvant être exécuté sur diverses plates-formes sans changements, pourvu qu'il existe un interprète spécifique à chacune de ces plates-formes matérielles.
+\\[0.5cm]
+Un certain nombre de langages informatiques sont aujourd'hui mis en œuvre au moyen d'une machine virtuelle applicative. Cette technique est à mi-chemin entre les interprètes tels que décrits ici et les compilateurs. Elle offre la portabilité des interprètes avec une bonne efficacité. Par exemple, des portages de Java, Lisp, Scheme, Ocaml, Perl (Parrot), Python, Ruby, Lua, C, etc. sont faits via une machine virtuelle.
+\\[0.5cm]
+L'interprétation abstraite (inventée par Patrick et Radhia Cousot) est une technique et un modèle d'analyse statique de programmes qui parcourt, un peu à la manière d'un interprète, le programme analysé en y remplaçant les valeurs par des abstractions. Par exemple, les valeurs des variables entières sont abstraites par des intervalles d'entiers, ou des relations algébriques entre variables.
+\\[0.5cm]
+Revenant à notre cas ,on ne veut pas sortir du cadre générale , on a procédé par la structurisation usiale .
+\\[0.5cm]
+On a commencé par Construire un analyseur Lexical ,après on a fait Analyseur syntaxique et puis Sémantique ,pour que par la suite la traduction se fait de façon simple et facile . 
 
-Voici un tableau (cf. fig. 2.1) récapitulatif de notre analyse de l'existant...\\
 
-%tableau centré à taille variable qui s'ajuste automatiquement suivant la longueur du contenu
-\begin{figure}[!h]
-\begin{center}
-\begin{tabular}{|l|l|l|l|l|}
-  \hline
-  Solution & Critère 1 & Critère 2 & Critère 3 & Critère 4\\
-  \hline
-  Solution 1(cf. ref. \cite{cite0}) & Oui & Oui & Oui & Oui \\
-  Solution 2(cf. ref. \cite{cite1}) & Oui & Oui & Oui & Non \\
-  Solution 3(cf. ref. \cite{cite2}) & Oui (sauf telle chose) & Non & Non & Oui\\
-  Solution 4(cf. ref. \cite{cite3}) & Oui& Non & Oui & Non\\
-  Solution 5(cf. ref. \cite{cite4}) & Oui (uniquement ceux-ci) & Non & Oui & Non\\
-  \hline
-\end{tabular}
-\end{center}
-\caption{Tableau récapitulatif des solutions}
-\end{figure}
+
+\section{Analyse Lexical}
+
+
+\section{Analyse syntaxique}
+
+(En cours ...)
+
+
+\section{Analyse sémantique}
+(En cours ...)
+
+\section{Traduction}
+(En cours ...)
+
