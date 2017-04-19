@@ -26,6 +26,7 @@ typedef struct Lexeme
         17  ||   
         18  @
         19 "
+        20 \
 
     */
 
@@ -78,7 +79,7 @@ Lexeme *new_Lexeme(char const *l)
    else  if(taille == 1)
     {
     
-        if( (strcmp(l,"+") == 0)   )
+        if( (strcmp(l,"+") == 0) || (strcmp(l,"-") == 0) || (strcmp(l,"*") == 0) || (strcmp(l,"/") == 0) || (strcmp(l,"%") == 0)   )
             {
              //printf("gdgdfd");
                 lem->type = 1;
@@ -103,6 +104,8 @@ Lexeme *new_Lexeme(char const *l)
             lem->type = 18;
         else if(strcmp(l,"\"") == 0 )
             lem->type = 19;        
+        else if(strcmp(l,"\\") == 0)
+            lem->type  = 20;
         else 
             lem->type = -1;
          return lem;   
@@ -145,6 +148,7 @@ Lexeme *new_Lexeme(char const *l)
 //      Cette foction verifie si un str est un mots
 int Lexeme_estKey(char const *t)
 {
+
     const char mots[8][10] = 
                                     {
                                       "var",
@@ -196,8 +200,8 @@ const char  *Lexeme_toString(Lexeme *l)
 
 int estUnDelimiteur(char c)
 {
-    int taille = 16;
-    char tab[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';'  };
+    int taille = 22;
+    char tab[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';' ,'+','-','*','\\','/','%'};
     
     for(int i=0;i<16;i++)
         if(c == tab[i])
@@ -211,9 +215,9 @@ int estUnDelimiteur(char c)
 
 const char *retourDelimiteur(char c)
 {
-    int taille = 16;
-    char *tab[] = {"\n", " " , "\t" , "(" , ")" , "[" , "]" , "{" , "}" , "=" , "<" , ">" , "\"" , "," , "@" , ";"  };
-    char tab1[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';'  };
+    int taille = 22;
+    char *tab[] = {"\n", " " , "\t" , "(" , ")" , "[" , "]" , "{" , "}" , "=" , "<" , ">" , "\"" , "," , "@" , ";" , "+" , "-" , "*" , "\\" ,"/" ,"%"  };
+    char tab1[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';' ,'+','-','*','\\','/','%'};
     int v = 0;
      for(int i=0;i<16;i++)
         if(c == tab1[i])
