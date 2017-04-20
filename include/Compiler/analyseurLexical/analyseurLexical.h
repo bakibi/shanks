@@ -83,7 +83,7 @@ Lexemes *Analyseur_LexcialV1(const char *phrase)
                     }   
                    
                
-              mot[j] = '\0';                      
+                mot[j] = '\0';                      
                 Lexeme *nn = new_Lexeme(mot);
                 liste = Lexemes_add(liste,nn);
                 strcpy(mot,"");
