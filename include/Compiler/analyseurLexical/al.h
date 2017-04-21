@@ -25,7 +25,7 @@ Lexemes *al(const char *phrase)
                          j = 0;
                         mot_en_cours = 0;
                         continue;
-                    }
+                    }// si il y a un mots en saisie en cours 
                     else 
                         continue;
                 }//si il ya un espace ou un retour à la ligne
@@ -35,7 +35,7 @@ Lexemes *al(const char *phrase)
                     {
                         liste = Lexemes_add(liste,new_Lexeme(mots));
                          liste = Lexemes_add(liste,new_Lexeme(retourDelimiteur(phrase[i])));
-                    }
+                    }// si il ya un mot en coureur
                 else 
                 {
                       liste = Lexemes_add(liste,new_Lexeme(retourDelimiteur(phrase[i])));

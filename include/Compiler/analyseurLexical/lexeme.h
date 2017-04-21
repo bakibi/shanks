@@ -104,6 +104,8 @@ Lexeme *new_Lexeme(char const *l)
             lem->type = 18;
         else if(strcmp(l,"\"") == 0 )
             lem->type = 19;        
+        else if(strcmp(l,"\\") == 0 )
+            lem->type = 20;        
         else if(strcmp(l,";") == 0)
             lem->type  = 21;
         else 
