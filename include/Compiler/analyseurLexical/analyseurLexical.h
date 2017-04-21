@@ -2,6 +2,8 @@
 
 #include "lexeme.h"
 #include "lexemes.h"
+#include "al.h"
+
 
 
 Lexemes *Analyseur_Lexcial(const char *phrase)

@@ -6,8 +6,7 @@ int main(int argv,char **args)
      char s[300];
      printf("---> ");
      gets(s);
-     //strcpy(s,"10.5 + 45 * 564 / 219 - 6519 -  65651 /  656 + 556");
-     Lexemes *liste = Analyseur_LexcialV1(s);
+     Lexemes *liste = al(s);
 
    //printf("%s",Str_formate(s));
 
