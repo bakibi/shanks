@@ -39,7 +39,7 @@ Lexemes *al(const char *phrase)
                 else 
                 {
                       liste = Lexemes_add(liste,new_Lexeme(retourDelimiteur(phrase[i])));
-                    liste = Lexemes_add(liste,new_Lexeme(mots));
+                    
                        
                 }               
                 

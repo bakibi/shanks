@@ -45,24 +45,15 @@ typedef struct Predicat
 
 
 //  La structure de donnees IF
-typedef struct IF
+typedef struct IF_ELSE
 {
-    char *if;
+    char *type;
     char *dg;//delimiteur gauche
     Predicat *predicat; // le predicat 
     char *dd;//delimiteur droite
     char *exp;
 
-}IF;
-
-
-//  La strucutre de donnes qui contient le ELSE
-typedef struct ELSE
-{
-    char *else; // le else
-   char *exp; // lexpression
-}ELSE ;
-
+}IF_ELSE;
 
 
 
