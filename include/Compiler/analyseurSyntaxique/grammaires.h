@@ -1,5 +1,5 @@
 
-
+//      La Grammaire
 typedef struct Grammaire
 {
     char *type;
@@ -12,6 +12,15 @@ typedef struct Grammaire
         //Fonction
     char *content;
     //all the content        
+}Grammaire;
+
+
+
+//      La strucure de donnees Grammaires c est une liste chainee
+typedef struct Grammaires
+{
+    Grammaire *grm;
+    struct Grammaires *svt;
 }Grammaire;
 
 
