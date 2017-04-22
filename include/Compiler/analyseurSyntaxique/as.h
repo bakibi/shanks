@@ -27,7 +27,9 @@
 
          else if(tmp->svt == NULL || tmp->svt->lex->type==21) // affichage
         {
-            Grammaire *g = new_Grammaire(0,tmp);
+             Lexemes *l = new_Lexemes();
+             l = Lexemes_add(l,tmp->lex);
+            Grammaire *g = new_Grammaire(0,l);
             liste = Grammaires_add(liste,g);
         }
         else
@@ -91,6 +93,7 @@
                 liste = Grammaires_add(liste,g);
                 }
             }
+            
         }//fin else
         if(tmp)
             tmp = tmp->svt;

@@ -58,5 +58,13 @@ void Grammaire_toString(Grammaire *g)
             case 5:printf("IF_ELSE\n");break;
             case 6:printf("FOR\n");break;
         }
+         Lexemes *pt = g->content;
+         while(pt)
+         {
+             printf("%s ",pt->lex->value);
+             pt = pt->svt;
+         }   
+         printf("\n");
+
     }
 }//eof
