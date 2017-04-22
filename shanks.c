@@ -24,10 +24,13 @@ int main(int argc,char *argv[])
      printf("%d",i);
      fclose(f);
      Lexemes *liste = al(s);//analyse lexicale
+
+     printf("-------------Analyse Lexicale\n");
      Lexemes_toString(liste);
   
-   
+   printf("-------------Analyse Syntaxique\n");
    Grammaires *listeS = as(liste);//analyse syntaxique
+   Grammaires_toString(listeS);
    
    
 
