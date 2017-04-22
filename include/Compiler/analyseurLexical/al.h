@@ -12,6 +12,8 @@ Lexemes *al(const char *phrase)
     int i=0,j=0;
     char mots[200];
     int mot_en_cours = 0;
+
+    
     for(i=0;i<taille;i++)
     {
         if(estUnDelimiteur(phrase[i]))

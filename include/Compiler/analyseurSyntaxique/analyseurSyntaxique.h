@@ -2,6 +2,8 @@
 
 #include "grammaire.h"
  #include "grammaires.h"
+ #include "PileSyn.h"
+ #include "verification.h"
  #include "as.h"
 
 

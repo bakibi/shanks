@@ -29,6 +29,8 @@ typedef struct Lexeme
         20 \
         21 ;
         22 .
+        23 {
+        24 }
     */
 
     char *value;
@@ -111,6 +113,10 @@ Lexeme *new_Lexeme(char const *l)
             lem->type  = 21;
         else if(strcmp(l,".") == 0)
             lem->type  = 22;    
+        else if(strcmp(l,"{") == 0)
+            lem->type  = 23;
+        else if(strcmp(l,"}") == 0)
+            lem->type  = 24;                
         else 
             lem->type = -1;
          return lem;   
