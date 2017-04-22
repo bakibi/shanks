@@ -32,8 +32,28 @@
         }
         else
         {
+            if(tmp->lex->type==19) // le cas si la commande commence par un ""
+            {
+                 Lexemes *l = new_Lexemes();
+                 int fin = 0;
+                 int v = 0;
+                 int v_avant = 0;
+                 int d = 0;
+                while(tmp!=NULL &&  fin==0)
+                {
+                    v =tmp->lex->type;
+                    l = Lexemes_add(l,tmp->lex);
+                    if(d!=0 && v==19 && v_avant!=20)
+                        fin = 1;
+                    d++;
+                    tmp =tmp->svt;
+                    v_avant = v;
+                }
+                Grammaire *g = new_Grammaire(0,l);
+                liste = Grammaires_add(liste,g);
+            }
          
-             if(tmp->lex->type == -1 && tmp->svt!=NULL && tmp->svt->lex->type == 15)//le cas d une affectation
+             else if(tmp->lex->type == -1 && tmp->svt!=NULL && tmp->svt->lex->type == 15)//le cas d une affectation
             {
                 Lexemes *l = new_Lexemes();
                 while(tmp!=NULL && tmp->lex->type != 21)
@@ -45,7 +65,7 @@
                 liste = Grammaires_add(liste,g);
             }//fin cas affectation
 
-            if(tmp->lex->type == 0 || tmp->lex->type == 1) // si ça commence par une ope ou un nombre
+           else  if(tmp->lex->type == 0 || tmp->lex->type == 1) // si ça commence par une ope ou un nombre
             {
                  Lexemes *l = new_Lexemes();
                 while(tmp!=NULL && tmp->lex->type != 21)// jusqu au null ou ;
@@ -57,7 +77,7 @@
                 liste = Grammaires_add(liste,g);
             }//fin cas  par une ope ou un nombre
 
-            if(tmp->lex->type == 3)// si c est pour une declaration
+          else  if(tmp->lex->type == 3)// si c est pour une declaration
             {
                 if(verifier_declaration(tmp->lex) == 1)
                 {
@@ -67,7 +87,7 @@
                     l = Lexemes_add(l,tmp->lex);
                     tmp =tmp->svt;
                 }
-                Grammaire *g = new_Grammaire(1,l);
+                Grammaire *g = new_Grammaire(2,l);
                 liste = Grammaires_add(liste,g);
                 }
             }
