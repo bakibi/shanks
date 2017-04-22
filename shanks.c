@@ -21,6 +21,7 @@ int main(int argc,char *argv[])
          i++;
      }
      s[i] = '\0';
+     printf("%d",i);
      fclose(f);
      Lexemes *liste = al(s);//analyse lexicale
      Lexemes_toString(liste);
