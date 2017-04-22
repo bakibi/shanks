@@ -28,6 +28,7 @@ typedef struct Lexeme
         19 "
         20 \
         21 ;
+        22 .
     */
 
     char *value;
@@ -108,6 +109,8 @@ Lexeme *new_Lexeme(char const *l)
             lem->type = 20;        
         else if(strcmp(l,";") == 0)
             lem->type  = 21;
+        else if(strcmp(l,".") == 0)
+            lem->type  = 22;    
         else 
             lem->type = -1;
          return lem;   
@@ -202,10 +205,10 @@ const char  *Lexeme_toString(Lexeme *l)
 
 int estUnDelimiteur(char c)
 {
-    int taille = 23;
-    char tab[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';' ,'+','-','*','\\','/','%',';'};
+    int taille = 24;
+    char tab[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';' ,'+','-','*','\\','/','%',';','.'};
     
-    for(int i=0;i<23;i++)
+    for(int i=0;i<24;i++)
         if(c == tab[i])
             return 1;
     return 0;
@@ -217,11 +220,11 @@ int estUnDelimiteur(char c)
 
 const char *retourDelimiteur(char c)
 {
-    int taille = 23;
-    char *tab[] = {"\n", " " , "\t" , "(" , ")" , "[" , "]" , "{" , "}" , "=" , "<" , ">" , "\"" , "," , "@" , ";" , "+" , "-" , "*" , "\\" ,"/" ,"%",";"  };
-    char tab1[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';' ,'+','-','*','\\','/','%',';'};
+    int taille = 24;
+    char *tab[] = {"\n", " " , "\t" , "(" , ")" , "[" , "]" , "{" , "}" , "=" , "<" , ">" , "\"" , "," , "@" , ";" , "+" , "-" , "*" , "\\" ,"/" ,"%",";","."  };
+    char tab1[] = {'\n', ' ' , '\t' , '(' , ')' , '[' , ']' , '{' , '}' , '=' , '<' , '>' , '\"' , ',' , '@' , ';' ,'+','-','*','\\','/','%',';','.'};
     int v = 0;
-     for(int i=0;i<23;i++)
+     for(int i=0;i<24;i++)
         if(c == tab1[i])
             v = i;
     return &tab[v][0];

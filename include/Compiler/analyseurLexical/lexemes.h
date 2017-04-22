@@ -59,3 +59,6 @@ Lexemes *Lexemes_add(Lexemes *lis,Lexeme *l)
 
     return lis;
 }//eof
+
+
+//      afficher tout les lexemes

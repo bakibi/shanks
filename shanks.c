@@ -7,7 +7,7 @@ int main(int argv,char **args)
      printf("---> ");
      gets(s);
      Lexemes *liste = al(s);//analyse lexicale
-     Grammaires *listeS = as(liste);
+     
    //printf("%s",Str_formate(s));
 
    printf("\n");
@@ -18,7 +18,7 @@ int main(int argv,char **args)
        tmp = tmp->svt;
    }
    
-   
+   Grammaires *listeS = as(liste);//analyse syntaxique
    
    
 
