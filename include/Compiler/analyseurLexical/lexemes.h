@@ -62,3 +62,13 @@ Lexemes *Lexemes_add(Lexemes *lis,Lexeme *l)
 
 
 //      afficher tout les lexemes
+void Lexemes_toString(Lexemes *liste)
+{
+    printf("\n");
+     Lexemes *tmp = liste;
+   while(tmp)
+   {
+       printf("%s\n",Lexeme_toString(tmp->lex));
+       tmp = tmp->svt;
+   }
+}

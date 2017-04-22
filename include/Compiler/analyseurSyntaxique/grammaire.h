@@ -10,6 +10,8 @@ typedef struct Grammaire
         //FOR 6
         //Fonction 7
     Lexemes *content;
+    char *errors;
+    char *warnings;
     //all the content        
 }Grammaire;
 

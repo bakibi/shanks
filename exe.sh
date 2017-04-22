@@ -1,6 +1,8 @@
+#!/bin/bash
 clear
 gcc -o out shanks.c  -lm
-./out
+
+./out $1
 
 echo ""
 echo "-------------------FIN------------------------"
