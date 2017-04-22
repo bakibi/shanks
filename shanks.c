@@ -6,8 +6,8 @@ int main(int argv,char **args)
      char s[300];
      printf("---> ");
      gets(s);
-     Lexemes *liste = al(s);
-
+     Lexemes *liste = al(s);//analyse lexicale
+     Grammaires *listeS = as(liste);
    //printf("%s",Str_formate(s));
 
    printf("\n");
@@ -17,6 +17,7 @@ int main(int argv,char **args)
        printf("%s\n",Lexeme_toString(tmp->lex));
        tmp = tmp->svt;
    }
+   
    
    
    
