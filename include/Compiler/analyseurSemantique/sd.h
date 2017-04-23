@@ -6,14 +6,14 @@
 typedef struct S_var
 {
     char nom[30];
-    float value;
+    char value[200];
 }S_var;
 
 
 
 //      structure chaine
-typedef struct S_var
+typedef struct S_str
 {
     char nom[30];
     char value[1000];
-}S_var;
+}S_str;
