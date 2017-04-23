@@ -1,3 +1,4 @@
 var x = 10;x;
-5+40+10.25;
-"salut tout le monde"
+x+40+10.25;
+"salut tout le monde";
+str  chaine="sdfsdf"
