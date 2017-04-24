@@ -11,6 +11,11 @@ typedef struct Finale
 //      Les prototypes
 Finale *new_Finale();
 Finale *Finale_addVar(Finale *f,const char *name,const char *value);
+int  Finale_varExists(Finale *f,const char *name);
+float *Finale_varValue(Finale *f,const char *name);
+Finale *Finale_addStr(Finale *f,const char *name,const char *value);
+int  Finale_strExists(Finale *f,const char *name);
+const char *Finale_strValue(Finale *f,const char *name);
 //      les implementations
 
 
@@ -26,10 +31,9 @@ Finale *new_Finale()
 }//eof
 
 
-//      adding une variable
+//      adding une variable de type var
 Finale *Finale_addVar(Finale *f,const char *name,const char *value)
 {
-
     
     return f;
 }
