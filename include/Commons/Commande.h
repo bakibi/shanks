@@ -56,7 +56,8 @@ Commande *Commande_interpreter(Commande *cmd)
 
 
    printf("-------------Analyse Syntaxique\n");
-   Grammaires *listeS = as(liste,cmd->errors);//analyse syntaxique
+   Grammaires *listeS = as(liste,cmd->errors);//analyse syntaxique 1
+                                     as1(listeS,cmd->errors);// analyse syntaxique finale
    Grammaires_toString(listeS);
    printf("%s\n",cmd->errors);
 
