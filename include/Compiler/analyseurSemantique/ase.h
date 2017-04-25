@@ -9,6 +9,7 @@ Grammaires *ase(Grammaires *tout)
 
     while(tmp)
     {
+        //  la cas si on a une 
         tmp = tmp->svt;
     }
     return NULL;

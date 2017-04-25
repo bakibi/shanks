@@ -28,7 +28,10 @@ Commande *new_Commande(const char *chaine)
     Commande *cmd  = (Commande *)malloc(sizeof(Commande));
     if(!cmd) return NULL;
     cmd->commande = (char *)malloc(strlen(chaine)); strcpy(cmd->commande,chaine);
-    cmd->warnings = cmd->errors = cmd->output = NULL;
+     cmd->output = (char *)malloc(sizeof(char)*5000);
+    cmd->errors= (char *)malloc(sizeof(char)*5000);
+    cmd->warnings = (char *)malloc(sizeof(char)*5000);
+    strcpy(cmd->errors,"");strcpy(cmd->output,"");strcpy(cmd->warnings,"");
     cmd->etat = cmd->outstat = 0;
     return cmd;
 }//eof
@@ -53,8 +56,9 @@ Commande *Commande_interpreter(Commande *cmd)
 
 
    printf("-------------Analyse Syntaxique\n");
-   Grammaires *listeS = as(liste);//analyse syntaxique
+   Grammaires *listeS = as(liste,cmd->errors);//analyse syntaxique
    Grammaires_toString(listeS);
+   printf("%s\n",cmd->errors);
 
 
     return cmd;

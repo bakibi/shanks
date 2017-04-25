@@ -1,7 +1,7 @@
 
 
 
- Grammaires *as(Lexemes *all)
+ Grammaires *as(Lexemes *all,char *errors)
  {
      Grammaires *liste  = new_Grammaires();
      if(all == NULL) return NULL;
@@ -9,16 +9,28 @@
 
     // Lanalyse commence ici
     if(verifier_parentheses(all)==0)
-        printf(" Erreur Syntaxique : il y a une erreur par rapport au parentheses () .\n");
+        {
+            const char *e=" Erreur Syntaxique : il y a une erreur par rapport au parentheses () .\n\0";
+            strcat(errors,e);
+        }
 
      if(verifier_quotation(all)==0)
-        printf(" Erreur Syntaxique : il y a une erreur par rapport au quotes \"\" .\n");
+        {
+            const char e[]=" Erreur Syntaxique : il y a une erreur par rapport au quotes \"\" .\n\0";
+            strcat(errors,e);
+        }
 
      if(verifier_brackets(all)==0)
-        printf(" Erreur Syntaxique : il y a une erreur par rapport au brackets {} .\n");
+        {
+            const char *e = " Erreur Syntaxique : il y a une erreur par rapport au brackets {} .\n\0";
+            strcat(errors,e);
+        }
     
     if(verifier_squares(all)==0)
-        printf(" Erreur Syntaxique : il y a une erreur par rapport au squares [] .\n");
+        {
+            const char e[] = " Erreur Syntaxique : il y a une erreur par rapport au squares [] .\n\0";
+            strcat(errors,e);
+        }
         
 
      while(tmp)
