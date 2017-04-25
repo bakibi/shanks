@@ -32,7 +32,8 @@ int main(int argc,char *argv[])
    Grammaires *listeS = as(liste);//analyse syntaxique
    Grammaires_toString(listeS);
    
-   
+   Space *sp = new_Space("souhail");
+   sp  = Space_delete(sp);
 
     return 0;
 }
