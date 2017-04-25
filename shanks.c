@@ -23,16 +23,10 @@ int main(int argc,char *argv[])
      s[i] = '\0';
      printf("%d",i);
      fclose(f);
-     Lexemes *liste = al(s);//analyse lexicale
-
-     printf("-------------Analyse Lexicale\n");
-     Lexemes_toString(liste);
-  
-   printf("-------------Analyse Syntaxique\n");
-   Grammaires *listeS = as(liste);//analyse syntaxique
-   Grammaires_toString(listeS);
-   
+     
    Space *sp = new_Space("souhail");
+   Commande *cmd = new_Commande(s);
+    cmd = Commande_interpreter(cmd);
    sp  = Space_delete(sp);
 
     return 0;

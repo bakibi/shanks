@@ -16,10 +16,13 @@ typedef struct Commande
 
 //      LEs prototypes 
 Commande *new_Commande(const char *chaine);
+Commande *Commande_interpreter(Commande *cmd);
 
 //      Les implementations
 
 
+
+//      Creation d une nouvelle commande
 Commande *new_Commande(const char *chaine)
 {
     Commande *cmd  = (Commande *)malloc(sizeof(Commande));
@@ -29,4 +32,34 @@ Commande *new_Commande(const char *chaine)
     cmd->etat = cmd->outstat = 0;
     return cmd;
 }//eof
+
+
+
+
+
+
+
+
+
+//      interpreter une commande
+Commande *Commande_interpreter(Commande *cmd)
+{   
+    if(cmd == NULL) return NULL;
+
+
+     Lexemes *liste = al(cmd->commande);//analyse lexicale
+      printf("-------------Analyse Lexicale\n");
+     Lexemes_toString(liste);
+
+
+   printf("-------------Analyse Syntaxique\n");
+   Grammaires *listeS = as(liste);//analyse syntaxique
+   Grammaires_toString(listeS);
+
+
+    return cmd;
+}
+
+
+
 
