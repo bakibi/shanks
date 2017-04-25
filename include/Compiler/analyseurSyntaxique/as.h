@@ -79,7 +79,7 @@
                 liste = Grammaires_add(liste,g);
             }//fin cas affectation
 
-           else  if(tmp->lex->type == 0 || tmp->lex->type == 1) // si ça commence par une ope ou un nombre
+           else  if(tmp->lex->type == 0 || tmp->lex->type == 1 || (tmp->lex->type == -1 && tmp->svt->lex->type == 1)) // si ça commence par une ope ou un nombre
             {
                  Lexemes *l = new_Lexemes();
                 while(tmp!=NULL && tmp->lex->type != 21)// jusqu au null ou ;
@@ -112,4 +112,4 @@
                     
      }//end of while
      return liste;
- }
+ }//eof
