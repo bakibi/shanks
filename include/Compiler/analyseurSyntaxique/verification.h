@@ -5,7 +5,7 @@ int verifier_parentheses(Lexemes *lex);
 int verifier_quotation(Lexemes *lex);
 int verifier_brackets(Lexemes *lex);
 int verifier_squares(Lexemes *lex);
-int verifier_declaration(Lexeme *lex);
+int verifier_declaration(Lexemes *lex);
 Lexeme *verifier_arithmetique(Lexemes *lex);
 
 
@@ -153,12 +153,57 @@ int verifier_squares(Lexemes *lex)
 
 
 //  verifier si un lexemes est pour la declaration
-int verifier_declaration(Lexeme *lex)
+int verifier_declaration(Lexemes *lex)
 {
-    if(strcmp(lex->value,"str")==0 || strcmp(lex->value,"var")==0)
-        return 1;
+       Lexemes *tmp = lex;
+        int v = -5;
+        int e = 0; // debut
+                        // = ---> 1
+                        // value --->2
+                        // , ---> 3
+                        //  var  -->4
+        if(strcmp(tmp->lex->value,"var") == 0)
+        {
+            tmp = tmp->svt;
+            while(tmp)
+            {
+                v = tmp->lex->type ;
+                if(v != 25 && v!=0 && v!=15 && v!=-1 )
+                    return 0;//cas derreur
+                if(e == 0 && (v ==25 || v == 0 || v == 15))
+                    return 0;
+                if(e == 1 && (v == 25 || v == 15))
+                    return 0;
+                if(e == 2 && (v == 15 || v == -1))
+                    return 0;
+                if(e == 3 && (v == 25 || v == 0 || v == 15))
+                    return 0;
+                if(e == 4 && (v== 0))
+                    return 0;
+                
+                if(v == 0)
+                    e = 2;
+                if(v == -1)
+                    e = 4;
+                if(v == 25)
+                    e = 3;
+                if(v == 15)
+                    e = 1;
+                tmp = tmp->svt;
+            }//fin while
+            if (e == 1 ||  e == 3)
+                return 0;
+        }
+        else
+        {
+            tmp = tmp->svt;
+            while(tmp)
+            {
+                tmp = tmp->svt;
+            }
+        }
 
-    return 0;
+    return 1;
 }
 
 
@@ -202,4 +247,4 @@ int verifier_declaration(Lexeme *lex)
       }// fin while
 
       return NULL;
-  }
+  }//eof

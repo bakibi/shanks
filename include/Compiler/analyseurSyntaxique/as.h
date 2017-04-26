@@ -98,7 +98,7 @@
 
           else  if(tmp->lex->type == 3)// si c est pour une declaration
             {
-                if(verifier_declaration(tmp->lex) == 1)
+                if(strcmp(tmp->lex->value,"var" ) == 0 || strcmp(tmp->lex->value,"str" ) == 0)
                 {
                      Lexemes *l = new_Lexemes();
                 while(tmp!=NULL && tmp->lex->type != 21)// jusqu au null ou ;

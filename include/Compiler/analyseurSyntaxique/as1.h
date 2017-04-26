@@ -34,6 +34,15 @@ int as1(Grammaires *all,char *errors)
             if(result != NULL)
                 strcat(errors,"Erreur Syntaxique : probleme dans le calcul arithmetique  . \n");
         }
+        else if (tmp->this->type == 2) //le cas declaration
+        {
+             Lexemes *le = tmp->this->content;
+            Lexemes *tp = le;
+            int r= verifier_declaration(tp);
+            if(r == 0)
+                strcat(errors,"Erreur Syntaxique : probleme dans la declaration des variables . \n");
+
+        }
 
         tmp = tmp->svt;
     }
