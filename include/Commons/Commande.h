@@ -62,6 +62,9 @@ Commande *Commande_interpreter(Commande *cmd)
    printf("%s\n",cmd->errors);
    
     printf("-------------Analyse Semantique\n");
+    if(strcmp(cmd->errors,"") != 0 );//si il y a des erreur syntaxique
+
+    printf("\n-------------OUTPUT\n");
 
     return cmd;
 }
