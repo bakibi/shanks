@@ -30,7 +30,7 @@ int as1(Grammaires *all,char *errors)
             Lexemes *tp = le;
             Lexeme *result = verifier_arithmetique(tp);
             if(result != NULL)
-                strcat(errors,"Erreur Syntaxique : probleme dans le calcul arithmetique cara inconnu . \n");
+                strcat(errors,"Erreur Syntaxique : probleme dans le calcul arithmetique  . \n");
         }
 
         tmp = tmp->svt;
