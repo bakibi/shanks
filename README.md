@@ -15,4 +15,5 @@
 - possibilté de changer la valeur d'une variable ou la supprimer difinitivement .
 - Les operations Logique sont traitées .
 - L'analyseur Lexical est fait .
-
+- L'analyse syntaxique est fait en partie .
+- L'analyse sémantique est en cours .
