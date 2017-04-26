@@ -24,6 +24,10 @@ int as1(Grammaires *all,char *errors)
                           strcat(errors,"Erreur Syntaxique : probleme dans l'affichage de la chaine de caractere . \n");
             }
         }//fin le cas d un affichage
+        else if(tmp->this->type == 1) //le cas d un calcul arithmetique
+        {
+            
+        }
 
         tmp = tmp->svt;
     }
