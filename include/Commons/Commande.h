@@ -60,7 +60,8 @@ Commande *Commande_interpreter(Commande *cmd)
                                      as1(listeS,cmd->errors);// analyse syntaxique finale
    Grammaires_toString(listeS);
    printf("%s\n",cmd->errors);
-
+   
+    printf("-------------Analyse Semantique\n");
 
     return cmd;
 }
