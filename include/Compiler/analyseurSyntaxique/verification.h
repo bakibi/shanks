@@ -174,13 +174,19 @@ int verifier_declaration(Lexeme *lex)
       Lexemes *tmp = lex;
       int v = -5;
       int e = 0; // debut
+                    // + - ---> 1
+                    // * / % ----> 2
+                    // var / nmbre ----> 3
       while(tmp)
       {
           v = tmp->lex->type;
           if(v == -1 || v == 0 || v == 1 || v == 4 || v == 5)
-             {
+             { 
                  if(e == 0 && v == 1 && ( strcmp(tmp->lex->value,"*") == 0 || strcmp(tmp->lex->value,"/") == 0 || strcmp(tmp->lex->value,"%") == 0))
-                    return NULL;
+                    return tmp->lex;//cas d erreur debut avec 
+                if(e == 1 && v == 1 && ( strcmp(tmp->lex->value,"*") == 0 || strcmp(tmp->lex->value,"/") == 0 || strcmp(tmp->lex->value,"%") == 0))
+                    return tmp->lex;//cas de 4+*5
+
                  tmp = tmp->svt;
              }
           else 
