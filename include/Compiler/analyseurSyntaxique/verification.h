@@ -186,6 +186,14 @@ int verifier_declaration(Lexeme *lex)
                     return tmp->lex;//cas d erreur debut avec 
                 if(e == 1 && v == 1 && ( strcmp(tmp->lex->value,"*") == 0 || strcmp(tmp->lex->value,"/") == 0 || strcmp(tmp->lex->value,"%") == 0))
                     return tmp->lex;//cas de 4+*5
+                if(e == 2 && v == 1 && ( strcmp(tmp->lex->value,"*") == 0 || strcmp(tmp->lex->value,"/") == 0 || strcmp(tmp->lex->value,"%") == 0))
+                    return tmp->lex; // cas de 4**5
+
+                 if(v == 1 && ( strcmp(tmp->lex->value,"*") == 0 || strcmp(tmp->lex->value,"/") == 0 || strcmp(tmp->lex->value,"%") == 0))
+                    e = 2;
+                else if(v == 1)
+                    e = 1;
+                else e  = 3;   
 
                  tmp = tmp->svt;
              }
