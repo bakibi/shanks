@@ -32,7 +32,7 @@
             strcat(errors,e);
         }
         
-
+        //  etape de conversion les lexemes en grammaires strucutree
      while(tmp)
      {
          if(tmp->lex->type == 21) ;// quand ; apparait sauter a l'autre lexeme'
@@ -62,6 +62,11 @@
                     d++;
                     tmp =tmp->svt;
                     v_avant = v;
+                }
+                 while(tmp!=NULL && tmp->lex->type != 21)// jusqu au null ou ;
+                {
+                    l = Lexemes_add(l,tmp->lex);
+                    tmp =tmp->svt;
                 }
                 Grammaire *g = new_Grammaire(0,l);
                 liste = Grammaires_add(liste,g);
@@ -104,6 +109,17 @@
                 Grammaire *g = new_Grammaire(2,l);
                 liste = Grammaires_add(liste,g);
                 }
+            }
+            else    //autre 
+            {
+                  Lexemes *l = new_Lexemes();
+                while(tmp!=NULL && tmp->lex->type != 21)// jusqu au null ou ;
+                {
+                    l = Lexemes_add(l,tmp->lex);
+                    tmp =tmp->svt;
+                }
+                Grammaire *g = new_Grammaire(0,l); // le cas daffichage
+                liste = Grammaires_add(liste,g);
             }
             
         }//fin else
