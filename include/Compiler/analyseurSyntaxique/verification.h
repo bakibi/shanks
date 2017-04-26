@@ -6,7 +6,7 @@ int verifier_quotation(Lexemes *lex);
 int verifier_brackets(Lexemes *lex);
 int verifier_squares(Lexemes *lex);
 int verifier_declaration(Lexeme *lex);
-
+Lexeme *verifier_arithmetique(Lexemes *lex);
 
 
 
@@ -160,3 +160,32 @@ int verifier_declaration(Lexeme *lex)
 
     return 0;
 }
+
+
+
+
+
+
+
+  Lexeme *verifier_arithmetique(Lexemes *lex)
+  {
+
+
+      Lexemes *tmp = lex;
+      int v = -5;
+      int e = 0; // debut
+      while(tmp)
+      {
+          v = tmp->lex->type;
+          if(v == -1 || v == 0 || v == 1 || v == 4 || v == 5)
+             {
+                 if(e == 0 && v == 1 && ( strcmp(tmp->lex->value,"*") == 0 || strcmp(tmp->lex->value,"/") == 0 || strcmp(tmp->lex->value,"%") == 0))
+                    return NULL;
+                 tmp = tmp->svt;
+             }
+          else 
+             return tmp->lex;
+      }// fin while
+
+      return NULL;
+  }

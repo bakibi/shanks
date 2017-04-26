@@ -26,7 +26,11 @@ int as1(Grammaires *all,char *errors)
         }//fin le cas d un affichage
         else if(tmp->this->type == 1) //le cas d un calcul arithmetique
         {
-            
+            Lexemes *le = tmp->this->content;
+            Lexemes *tp = le;
+            Lexeme *result = verifier_arithmetique(tp);
+            if(result != NULL)
+                strcat(errors,"Erreur Syntaxique : probleme dans le calcul arithmetique cara inconnu . \n");
         }
 
         tmp = tmp->svt;
