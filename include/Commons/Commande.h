@@ -59,13 +59,15 @@ Commande *Commande_interpreter(Commande *cmd)
    Grammaires *listeS = as(liste,cmd->errors);//analyse syntaxique 1
                                      as1(listeS,cmd->errors);// analyse syntaxique finale
    Grammaires_toString(listeS);
-   printf("%s\n",cmd->errors);
+  
    
     printf("-------------Analyse Semantique\n");
-    if(strcmp(cmd->errors,"") != 0 );//si il y a des erreur syntaxique
-
+    if(strcmp(cmd->errors,"") == 0 ) listeS = ase(listeS,cmd->errors,cmd->warnings);//si il y a des erreur syntaxique
+ 
     printf("\n-------------OUTPUT\n");
 
+    printf("\n--------------Errors\n");
+    printf("%s\n",cmd->errors);
     return cmd;
 }
 
