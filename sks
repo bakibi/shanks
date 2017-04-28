@@ -1,8 +1,12 @@
 #!/bin/bash
 clear
 gcc -o out shanks.c  -lm
-
+if  [ $# -gt 1 ]  
+then
 ./out $1
+else
+echo "entrer un fichier en paramemtre"
+fi
 
 echo ""
 echo "-------------------FIN------------------------"
