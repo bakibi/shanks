@@ -38,7 +38,7 @@
      {
          if(tmp->lex->type == 21) ;// quand ; apparait sauter a l'autre lexeme'
 
-         else if(tmp->svt == NULL || tmp->svt->lex->type==21) // affichage   21 --> ;
+         else if(tmp->lex->type==-1 &&(tmp->svt == NULL || tmp->svt->lex->type==21)) // affichage   21 --> ;
         {
              Lexemes *l = new_Lexemes();
              l = Lexemes_add(l,tmp->lex);
