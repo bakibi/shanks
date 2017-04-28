@@ -4,6 +4,7 @@
 
 //      les prototypes 
 int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors);
+int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
 
 
 //      les implentations
@@ -68,4 +69,47 @@ int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors)
     if(r == 0)
         return 1;//true
     return 0;//false   
+}//eof
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fonction de verification d une verifier_decclaration
+int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
+{
+
+    Lexemes *tmp = gr->content;
+
+    int r = 0;
+    int e = 0;
+    //      0       ->      debut
+    //      1       ->      var
+    //      2       ->      =
+    //      3       ->      value
+    //      4       ->      ,
+    tmp = tmp->svt;
+    while(tmp)
+    {
+
+        if(tmp->lex->type == -1) e = 1;
+        else if(tmp->lex->type == 0) e = 3;
+        else if(tmp->lex->type == 15) e = 2;
+        else if(tmp->lex->type == 25) e = 4;
+
+        tmp = tmp->svt;
+    }
+    return 1;//true
 }//eof
