@@ -25,7 +25,7 @@ Grammaires *ase(Grammaires *tout,char *errors,char *warnings)
             }//fin arithmetique
             else if (tmp->this->type == 2) //le cas d une declaration
             {
-                
+                verifier_decclaration(tmp->this,f,errors,warnings);
             }
         tmp = tmp->svt;
     }

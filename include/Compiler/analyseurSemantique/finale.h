@@ -12,7 +12,7 @@ typedef struct Finale
 Finale *new_Finale();
 Finale *Finale_addVar(Finale *f,const char *name,const char *value);
 int  Finale_varExists(Finale *f,const char *name);
-float Finale_varValue(Finale *f,const char *name);
+const char *Finale_varValue(Finale *f,const char *name);
 Finale *Finale_addStr(Finale *f,const char *name,const char *value);
 int  Finale_strExists(Finale *f,const char *name);
 const char *Finale_strValue(Finale *f,const char *name);
@@ -64,20 +64,20 @@ Finale *Finale_addVar(Finale *f,const char *name,const char *value)
 
 
 //  return value of a existing variable
-float Finale_varValue(Finale *f,const char *name)
+const char *Finale_varValue(Finale *f,const char *name)
 {
-    float r = 0;
+    
     L_S_var *tmp = f->l1;
     while(tmp)
     {
         if(strcmp(tmp->this.nom,name) == 0)
             {
-                r = atof(tmp->this.value);
-                return r;
+                return tmp->this.value;
+                
             }
         tmp = tmp->svt;
     }//while
-    return r;
+    return "";
 }//eof
 
 

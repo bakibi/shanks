@@ -68,6 +68,9 @@ Commande *Commande_interpreter(Commande *cmd)
 
     printf("\n--------------Errors\n");
     printf("%s\n",cmd->errors);
+
+    printf("\n--------------Warnings\n");
+    printf("%s\n",cmd->warnings);
     return cmd;
 }
 
