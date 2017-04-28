@@ -3,6 +3,7 @@
 
  Grammaires *as(Lexemes *all,char *errors)
  {
+     //all = rassembler_nbr(all);
      Grammaires *liste  = new_Grammaires();
      if(all == NULL) return NULL;
     Lexemes *tmp = all;

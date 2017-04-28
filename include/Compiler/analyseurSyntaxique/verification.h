@@ -7,7 +7,7 @@ int verifier_brackets(Lexemes *lex);
 int verifier_squares(Lexemes *lex);
 int verifier_declaration(Lexemes *lex);
 Lexeme *verifier_arithmetique(Lexemes *lex);
-
+Lexemes *rassembler_nbr(Lexemes *lex);
 
 
 
@@ -247,4 +247,42 @@ int verifier_declaration(Lexemes *lex)
       }// fin while
 
       return NULL;
+  }//eof
+
+
+
+
+
+
+//rassembler_nbr 
+  Lexemes *rassembler_nbr(Lexemes *lex)
+  {
+    Lexemes *nv = NULL;
+    char nbr[30] = "";
+    int e = 0;
+    Lexemes *tmp = lex;
+    while(tmp)
+    {
+        if(tmp->lex->type !=0 && e == 0 )
+            nv = Lexemes_add(nv,tmp->lex);
+        else if(tmp->lex->type !=0 && e != 0 )
+        {
+            nv = Lexemes_add(nv,new_Lexeme(nbr));
+            nv = Lexemes_add(nv,tmp->lex);
+            e = 0;
+        }
+        else
+        {
+            if(e == 0)
+                strcpy(nbr,"");
+            strcat(nbr,tmp->lex->value);
+            e = 1;
+        }
+
+        tmp = tmp->svt;
+    }
+    if(e == 1)
+         nv = Lexemes_add(nv,tmp->lex);
+
+    return nv;
   }//eof
