@@ -168,7 +168,7 @@ int verifier_declaration(Lexemes *lex)
             while(tmp)
             {
                 v = tmp->lex->type ;
-                if(v != 25 && v!=0 && v!=15 && v!=-1 )
+                if(v != 25 && v!=0 && v!=15 && v!=-1)
                     return 0;//cas derreur
                 if(e == 0 && (v ==25 || v == 0 || v == 15))
                     return 0;
