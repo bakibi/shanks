@@ -8,7 +8,7 @@ int verifier_squares(Lexemes *lex);
 int verifier_declaration(Lexemes *lex);
 Lexeme *verifier_arithmetique(Lexemes *lex);
 Lexemes *rassembler_nbr(Lexemes *lex);
-
+int verifier_nombre(const char *nbr);
 
 
 //      verifier les parentheses
@@ -189,6 +189,9 @@ int verifier_declaration(Lexemes *lex)
                     e = 3;
                 if(v == 15)
                     e = 1;
+                if(e == 2 && verifier_nombre(tmp->lex->value) == 0)
+                    return 0;
+
                 tmp = tmp->svt;
             }//fin while
             if (e == 1 ||  e == 3)
@@ -239,7 +242,8 @@ int verifier_declaration(Lexemes *lex)
                 else if(v == 1)
                     e = 1;
                 else e  = 3;   
-
+               // if(tmp->lex->type == 0 && verifier_nombre(tmp->lex->value)==0)
+                 //   return tmp->lex;
                  tmp = tmp->svt;
              }
           else 
@@ -286,3 +290,23 @@ int verifier_declaration(Lexemes *lex)
 
     return nv;
   }//eof
+
+
+
+
+
+
+
+
+  int verifier_nombre(const char *nbr)
+  {
+
+      int taille = strlen(nbr);
+      int e =0;
+      for(int i =0;i<taille;i++)
+      {
+            if(nbr[i] =='.')    e++;
+
+      }
+      return e<=1;
+  }
