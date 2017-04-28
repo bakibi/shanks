@@ -4,7 +4,7 @@
 
 //      les prototypes 
 int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors);
-Finale *verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
+int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
 int verifier_nom_var(const char *nom);
 
 //      les implentations
@@ -106,7 +106,7 @@ int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors)
 
 
 // fonction de verification d une verifier_decclaration
-Finale *verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
+int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
 {
 
     Lexemes *tmp = gr->content;
@@ -206,5 +206,7 @@ Finale *verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warning
 
         tmp = tmp->svt;
     }
-    return f;//true
+    if(r==0)
+        return 1;//true
+    return 0;
 }//eof

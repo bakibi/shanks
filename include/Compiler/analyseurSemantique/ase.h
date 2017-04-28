@@ -37,14 +37,14 @@ Grammaires *ase(Grammaires *tout,char *errors,char *warnings,char *output)
                 if(verifier_arrithmetique(tmp->this,f,errors) == 1)
                     {
                        char *resultz = (char *)malloc(100) ;
-                       resultz = calc_arithm(resultz,tmp->this->content->svt->svt,f);
+                       resultz = calc_arithm(resultz,tmp->this->content,f);
                        strcat(output,resultz);
                         strcat(output,"\n");
                     }
             }//fin arithmetique
             else if (tmp->this->type == 2) //le cas d une declaration
             {
-              f=  verifier_decclaration(tmp->this,f,errors,warnings);
+              verifier_decclaration(tmp->this,f,errors,warnings);
             }
         tmp = tmp->svt;
     }
