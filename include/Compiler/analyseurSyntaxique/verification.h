@@ -242,8 +242,8 @@ int verifier_declaration(Lexemes *lex)
                 else if(v == 1)
                     e = 1;
                 else e  = 3;   
-               // if(tmp->lex->type == 0 && verifier_nombre(tmp->lex->value)==0)
-                 //   return tmp->lex;
+                if(tmp->lex->type == 0 && verifier_nombre(tmp->lex->value)==0)
+                     return tmp->lex;
                  tmp = tmp->svt;
              }
           else 
@@ -266,7 +266,7 @@ int verifier_declaration(Lexemes *lex)
     int e = 0;
     Lexemes *tmp = lex;
     while(tmp)
-    {
+    {   
         if(tmp->lex->type !=0 && e == 0 )
             nv = Lexemes_add(nv,tmp->lex);
         else if(tmp->lex->type !=0 && e != 0 )
@@ -286,7 +286,7 @@ int verifier_declaration(Lexemes *lex)
         tmp = tmp->svt;
     }
     if(e == 1)
-         nv = Lexemes_add(nv,tmp->lex);
+         nv = Lexemes_add(nv,new_Lexeme(nbr));
 
     return nv;
   }//eof

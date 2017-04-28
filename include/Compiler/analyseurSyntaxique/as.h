@@ -1,9 +1,9 @@
 
 
 
- Grammaires *as(Lexemes *all,char *errors)
+ Grammaires *as(Lexemes *all1,char *errors)
  {
-     all = rassembler_nbr(all);
+     Lexemes *all = rassembler_nbr(all1);
      Grammaires *liste  = new_Grammaires();
      if(all == NULL) return NULL;
     Lexemes *tmp = all;
