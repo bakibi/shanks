@@ -4,7 +4,7 @@
 
 //      les prototypes 
 int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors);
-int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
+Finale *verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
 int verifier_nom_var(const char *nom);
 
 //      les implentations
@@ -106,7 +106,7 @@ int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors)
 
 
 // fonction de verification d une verifier_decclaration
-int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
+Finale *verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
 {
 
     Lexemes *tmp = gr->content;
@@ -132,7 +132,7 @@ int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
         else if(e == 2 && tmp->lex->type == -1 ) e =5;
         else ;
 
-        if(e == 1 && (tmp->svt == NULL || tmp->svt->lex->type == 25))
+        if(e == 1 && (tmp->svt == NULL || tmp->svt->lex->type == 25)) // on a une nouvelle declaration
         {
             
             if(verifier_nom_var(tmp->lex->value))
@@ -185,12 +185,12 @@ int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
                             }
                             else // sinon on ajoute la variable
                             {
-                                Finale_addVar(f,tmp->lex->value,Finale_varValue(f,aff->value));
+                               f= Finale_addVar(f,tmp->lex->value,Finale_varValue(f,aff->value));
                             }
                         } //fin  le cas si l'aafectaion sefait par une variable
                         else // affecatation par un nombre
                         {
-                             Finale_addVar(f,tmp->lex->value,aff->value);
+                             f=Finale_addVar(f,tmp->lex->value,aff->value);
                         }
                     }
                }
@@ -206,5 +206,5 @@ int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
 
         tmp = tmp->svt;
     }
-    return 1;//true
+    return f;//true
 }//eof

@@ -62,10 +62,10 @@ Commande *Commande_interpreter(Commande *cmd)
   
    
     printf("-------------Analyse Semantique\n");
-    if(strcmp(cmd->errors,"") == 0 ) listeS = ase(listeS,cmd->errors,cmd->warnings);//si il y a des erreur syntaxique
+    if(strcmp(cmd->errors,"") == 0 ) listeS = ase(listeS,cmd->errors,cmd->warnings,cmd->output);//si il y a des erreur syntaxique
  
     printf("\n-------------OUTPUT\n");
-
+if(strcmp(cmd->errors,"") == 0 ) printf("%s\n",cmd->output);
     printf("\n--------------Errors\n");
     printf("%s\n",cmd->errors);
 
