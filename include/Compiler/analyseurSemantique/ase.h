@@ -1,7 +1,7 @@
 
 
 // la fonction de l analyse Semantique
-
+ char *calc_arithm(char *result,Lexemes *lex,Finale *f);
 
 Grammaires *ase(Grammaires *tout,char *errors,char *warnings,char *output)
 {
@@ -34,7 +34,13 @@ Grammaires *ase(Grammaires *tout,char *errors,char *warnings,char *output)
             }// fin cas de declaration
             else if( tmp->this->type == 1)//le cas de arithmetique
             {
-                verifier_arrithmetique(tmp->this,f,errors);
+                if(verifier_arrithmetique(tmp->this,f,errors) == 1)
+                    {
+                       char *resultz = (char *)malloc(100) ;
+                       resultz = calc_arithm(resultz,tmp->this->content->svt->svt,f);
+                       strcat(output,resultz);
+                        strcat(output,"\n");
+                    }
             }//fin arithmetique
             else if (tmp->this->type == 2) //le cas d une declaration
             {

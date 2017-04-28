@@ -2,3 +2,4 @@
 
 #include "Commande.h"
 #include "Space.h"
+#include "arithmetique.h"
