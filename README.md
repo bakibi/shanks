@@ -21,5 +21,7 @@
 ## How to use it
 ``
 export PATH=$PATH:.
+``
+``
 sks test.sks
 ``
