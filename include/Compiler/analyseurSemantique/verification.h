@@ -6,7 +6,7 @@
 int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors);
 int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
 int verifier_nom_var(const char *nom);
-
+int verifier_affec(Grammaire *gr,Finale *f,char *errors);
 //      les implentations
 
 
@@ -209,4 +209,41 @@ int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
     if(r==0)
         return 1;//true
     return 0;
+}//eof
+
+
+
+
+
+
+
+
+
+
+int verifier_affec(Grammaire *gr,Finale *f,char *errors)
+{
+    Lexemes *tmp = gr->content;
+
+    if(Finale_varExists(f,tmp->lex->value) == 0 && Finale_strExists(f,tmp->lex->value) == 0 )
+    {
+        strcat(errors,"Erreur semantique : la variable  \"");
+        strcat(errors,tmp->lex->value);
+        strcat(errors,"\" n'est pas declare .\n");
+        return 0;
+    }
+    else if(Finale_varExists(f,tmp->lex->value) ) // cas d une varible var
+    {
+        tmp = tmp->svt;
+        tmp = tmp->svt;
+        Grammaire *g = new_Grammaire(4,tmp);
+        if(verifier_arrithmetique(g,f,errors) == 0)
+            return 0;
+        else return 1;
+    }
+    else // cas d une str
+    {
+        
+    }
+    return 1;
+
 }//eof

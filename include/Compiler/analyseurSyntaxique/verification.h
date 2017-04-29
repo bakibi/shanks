@@ -9,6 +9,7 @@ int verifier_declaration(Lexemes *lex);
 Lexeme *verifier_arithmetique(Lexemes *lex);
 Lexemes *rassembler_nbr(Lexemes *lex);
 int verifier_nombre(const char *nbr);
+int verifier_affectation(Lexemes *lex);
 
 
 //      verifier les parentheses
@@ -309,4 +310,26 @@ int verifier_declaration(Lexemes *lex)
 
       }
       return e<=1;
+  }//eof
+
+
+
+
+
+
+
+
+  int verifier_affectation(Lexemes *lex)
+  {
+      int r = 1;
+      Lexemes *tmp = lex;
+    
+      tmp = tmp->svt;
+      if(tmp->svt == NULL)
+        return 0;
+        tmp = tmp->svt;
+     if(r == 1)
+        return verifier_arithmetique(tmp) == NULL;
+        
+      return 0;
   }
