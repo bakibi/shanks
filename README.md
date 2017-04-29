@@ -17,3 +17,9 @@
 - L'analyseur Lexical est fait .
 - L'analyse syntaxique est fait en partie .
 - L'analyse sémantique est en cours .
+
+## How to use it
+``
+export PATH=$PATH:.
+sks test.sks
+``
