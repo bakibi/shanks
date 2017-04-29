@@ -21,6 +21,6 @@
 ## How to use it
 
 ```
-export PATH=$PATH:.
-sks test.sks
+export PATH=$PATH:.    // ajouter l'executable à l'environement
+sks test.sks                       // executer la commande pour compiler un fichier et l'executer
 ```
