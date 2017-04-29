@@ -6,6 +6,7 @@
     vous pouver avec programmer plus rapidement et creer des UI ...
 
     L'extension des fichiers doit être ".sks"
+
 ## Fonctionnalités
 
 - calculer une expression arithmétique simple .
@@ -25,3 +26,6 @@ Entrer dans le dossier du programme ,et ensuite executer les commandes suivantes
 export PATH=$PATH:.    // ajouter l'executable à l'environement
 sks test.sks             // executer la commande pour compiler un fichier et l'executer
 ```
+## Autres
+
+vous pouvez lire plus sur l'interpreteur dans le site , [Shanks Webpage](https://bakibi.github.io/web).
