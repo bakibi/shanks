@@ -20,6 +20,7 @@
 
 ## How to use it
 
+Entrer dans le dossier du programme ,et ensuite executer les commandes suivantes :
 ```
 export PATH=$PATH:.    // ajouter l'executable à l'environement
 sks test.sks             // executer la commande pour compiler un fichier et l'executer
