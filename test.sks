@@ -1,5 +1,1 @@
-var x = 15;
-x;
-x = 20;
-x = 2*x;
-x
+"salut +"+var+"qedqdsfsds"
