@@ -358,15 +358,58 @@ int verifier_declaration(Lexemes *lex)
   int verifier_affectation(Lexemes *lex)
   {
       int r = 1;
+     
       Lexemes *tmp = lex;
       tmp = tmp->svt; // on est ici a = 
       if(tmp->svt == NULL)
         return 0;
         tmp = tmp->svt; // on est ici apres =
-     if(r == 1)
-        return verifier_arithmetique(tmp) == NULL;
+       int e = 0;
+    int v = -5;
+    //      1       -->     " du debut
+    //      2       -->     " de la fin
+    //      3       -->     +   du debut
+    //      4       -->     + de la fin
+    //      5       -->     other
+    while(tmp)
+    {   
         
-      return 0;
+        if((e == 0 || e == 4) && tmp->lex->type == 19) e = 1;
+        else if (e == 1 && v!=20 && tmp->lex->type == 19) e = 2;
+        else if (e == 2 && tmp->lex->type == 1) e =3;
+        else if ((e == 3 || e == 5) && tmp->lex->type == 1) e = 4;
+        else if( e == 3) e = 5;
+     
+        if(e == 2 && tmp->svt == NULL)
+            return 1;
+        else if(e == 2 && tmp->svt->lex->type != 1)
+            return 0;
+        else if((e == 3 || e == 4) && strcmp(tmp->lex->value,"+")!=0)
+            return 0;
+      else if (e == 5)
+      {
+          Lexemes *tt = new_Lexemes();
+          while(tmp)
+          {
+              if( tmp->svt !=NULL && tmp->svt->lex->type == 1 && strcmp(tmp->svt->lex->value,"+") == 0 )
+                break; 
+              tt = Lexemes_add(tt,new_Lexeme(tmp->lex->value));
+              tmp = tmp->svt;
+          }//end while
+          if(tmp == NULL )
+            return  verifier_arithmetique(tt) == NULL;
+        if(verifier_arithmetique(tt) != NULL)
+            return 0;
+      }
+        
+            
+        v = tmp->lex->type;
+        tmp  = tmp->svt;
+    }//eof
+
+    if (e == 3 || e == 4 || e == 2)
+        return 0;//false
+      return 1;
   }//eof
 
 
@@ -405,7 +448,7 @@ int verifier_declaration(Lexemes *lex)
           Lexemes *tt = new_Lexemes();
           while(tmp)
           {
-              if( tmp->lex->type == 19)
+              if( tmp->svt !=NULL && tmp->svt->lex->type == 1 && strcmp(tmp->svt->lex->value,"+") == 0 )
                 break; 
               tt = Lexemes_add(tt,new_Lexeme(tmp->lex->value));
               tmp = tmp->svt;

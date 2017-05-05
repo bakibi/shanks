@@ -122,6 +122,8 @@ int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings)
     //      3       ->      value
     //      4       ->      ,
     //      5       ->      var_aff
+
+    
     tmp = tmp->svt;
     while(tmp)
     {

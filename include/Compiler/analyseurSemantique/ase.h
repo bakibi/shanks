@@ -5,10 +5,10 @@
 
 
 //la fonction du analyse arithmetique
-Grammaires *ase(Grammaires *tout,char *errors,char *warnings,char *output)
+Grammaires *ase(Grammaires *tout,char *errors,char *warnings,char *output,Finale *f)
 {
     Grammaires *tmp  = tout;
-    Finale *f = new_Finale();
+    
     while(tmp)
     {
         
