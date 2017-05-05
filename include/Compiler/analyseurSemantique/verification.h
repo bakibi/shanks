@@ -7,6 +7,9 @@ int verifier_arrithmetique(Grammaire *gr,Finale *f,char *errors);
 int verifier_decclaration(Grammaire *gr,Finale *f,char *errors,char *warnings);
 int verifier_nom_var(const char *nom);
 int verifier_affec(Grammaire *gr,Finale *f,char *errors);
+
+
+
 //      les implentations
 
 
